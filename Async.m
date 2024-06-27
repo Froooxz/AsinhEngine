@@ -55,23 +55,22 @@ for i = 1:N
 end
 
 figure;
-subplot(3,1,1);
+hold on
 plot(time, Isd_array);
 title('Ток статора по d-оси');
 xlabel('Время (с)');
 ylabel('I_{sd} (A)');
 
-subplot(3,1,2);
 plot(time, Isq_array);
 title('Ток статора по q-оси');
 xlabel('Время (с)');
 ylabel('I_{sq} (A)');
 
-subplot(3,1,3);
 plot(time, PsiSq_array);
 title('Поток ротора по q-оси');
 xlabel('Время (с)');
 ylabel('Ψ_{sq} (Wb)');
+hold off
 
 figure;
 plot(time, M_array);
