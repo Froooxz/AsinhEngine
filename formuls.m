@@ -14,3 +14,20 @@ for i = 2:N
 end
 
 plot(omega)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

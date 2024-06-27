@@ -1,28 +1,33 @@
 clear all; clc; close all;
 
-N = 200;
+N = 1000;
 
 J = 0.5; % момент инерции
-omega = zeros(N,1); % угловая скорость
-L = 100; % момент импульса
-L_sopr = 2; % момент импульса сопротивления
-koef_L = 50;
-koef_L_sopr = 1;
-
+omega = ones(N,1); % угловая скорость
+M = 10; % электромагнитный момент
+M_sopr = 2; % электромагнитный момент сопротивления
+dt = 0.01;
 
 for i = 2:N
-    omega(i) = omega(i-1) + (L*(1/koef_L) - L_sopr*koef_L)/J;
+    omega(i) = omega(i-1) + dt*((M/omega(i-1) - M_sopr)/J);
 
-
-    koef_L = koef_L - 0.1;
-    if koef_L <= 0.1
-            koef_L = 0.1;
-    end
-
-    koef_L_sopr = koef_L_sopr - 0.1;
-    if koef_L_sopr <= 0
-            koef_L_sopr = 0;
-    end
 end
 
 plot(omega)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
