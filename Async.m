@@ -63,8 +63,10 @@ end
 figure;
 plot(omega_e);
 title('omega_e');
+grid on;
 
 figure;
 plot(omega_R);
 title('omega_R');
+grid on;
 
